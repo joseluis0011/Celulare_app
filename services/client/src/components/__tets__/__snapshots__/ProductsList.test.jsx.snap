@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductsList renders a snapshot properly 1`] = `
+<div>
+  <table
+    className="table is-narrow is-striped is-fullwidth is-hoverable"
+  >
+    <thead>
+      <tr>
+        <th>
+          Nombre
+        </th>
+        <th>
+          Cantidad
+        </th>
+        <th>
+          Serie
+        </th>
+        <th>
+          Modelo
+        </th>
+        <th>
+          Marca
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          xiomi
+        </td>
+        <td>
+          5
+        </td>
+        <td>
+          PP
+        </td>
+        <td>
+          p02
+        </td>
+        <td>
+          xiomi
+        </td>
+      </tr>
+      <tr>
+        <td>
+          lg
+        </td>
+        <td>
+          8
+        </td>
+        <td>
+          Z7
+        </td>
+        <td>
+          HJ
+        </td>
+        <td>
+          lg
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;

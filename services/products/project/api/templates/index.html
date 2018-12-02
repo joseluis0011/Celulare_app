@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Products</title>
+        <!--meta-->
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <!--styles-->
+        <link
+        href="//cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css"
+        rel="stylesheet">
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+        {% block css%}{% endblock %}
+    </head>
+    <body>
+        <div class="container">
+            <div class="column is-one-third">
+                <br>
+                <h1 class="title">All Products</h1>
+                <hr><br>
+                <form action="/" method="POST">
+                    <div class="field">
+                        <input
+                        name="nombre" class="input"
+                        type="text" placeholder=" producto" required>
+                    </div>
+                    <div class="field">
+                        <input
+                        name="cantidad" class="input"
+                        type="text" placeholder=" cantidad" required>
+                    </div>
+                    <div class="field">
+                        <input
+                        name="serie" class="input"
+                        type="text" placeholder=" serie " required>
+                    </div>
+                    <div class="field">
+                        <input
+                        name="modelo" class="input"
+                        type="text" placeholder=" modelo" required>
+                    </div>
+                    <div class="field">
+                        <input
+                        name="marca" class="input"
+                        type="text" placeholder="marca" required>
+                    </div> 
+                    <input
+                    type="submit" class="button is-primary is-fullwidth"
+                    value="Submit">
+                </form>
+                <br>
+                <hr>
+                 {% if products %}
+                    <ol>
+                        {% for product in products %}
+                         <li>{{product.nombre}}</li>
+                         <li>{{product.cantidad}}</li>
+                         <li>{{product.serie}}</li>
+                         <li>{{product.modelo}}</li>
+                         <li>{{product.marca}}</li>
+                        {% endfor %}
+                    </ol>
+                 {% else %}
+                    <p>No hay productos!</p>
+                 {% endif %}
+            </div>
+        </div>
+        </script>
+        {% block js %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,53 @@
+# services/products/project/api/models.py
+
+
+from project import db
+from sqlalchemy.sql import func
+
+class Product(db.Model):
+
+    __tablename__ = 'celular'
+
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    nombre = db.Column(db.String(128), nullable=False)
+    cantidad = db.Column(db.Integer(), nullable=False)
+    serie = db.Column(db.String(128), nullable=False)
+    modelo = db.Column(db.String(128), nullable=False)
+    marca = db.Column(db.String(128), nullable=False)
+    cliente = db.relationship('Cliente', backref='')
+
+    def to_json(self):
+        return {
+            'id': self.id,
+            'nombre': self.nombre,
+            'cantidad': self.cantidad,
+            'serie': self.serie,
+            'modelo': self.modelo,
+            'marca': self.marca
+        }
+
+    def __init__(self, nombre, cantidad, serie, modelo, marca):
+        self.nombre = nombre
+        self.cantidad = cantidad
+        self.serie = serie
+        self.modelo = modelo
+        self.marca = marca
+
+class Cliente(db.Model):
+
+    __tablename__='cliente'
+
+    id = db.Column(db.Integer,primary_key=True,autoincrement=True)
+    nombre = db.Column(db.String(128), nullable=False)
+    apellido = db.Column(db.String(128), nullable=False)
+    product_id = db.Column(db.Integer,db.ForeignKey('product.id'), nullable=False)
+
+    def to_json(self):
+        return{
+            'id':self.id,
+            'nombre':self.nombre,
+            'apellido':self.apellido
+        }
+    def __init__(self, nombre,apellido):
+        self.nombre = nombre
+        self.apellido = apellido
