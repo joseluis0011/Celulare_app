@@ -41,7 +41,7 @@ class TestProductService(BaseTestCase):
             response = self.client.post(
                 '/products',
                 data=json.dumps({
-                    'nombre':'Sansung',
+                    'nombre': 'Sansung',
                     'cantidad': 12,
                     'serie': 'MK3526',
                     'modelo': 'S4',
@@ -52,10 +52,9 @@ class TestProductService(BaseTestCase):
             data = json.loads(response.data.decode())
             self.assertEqual(response.status_code, 201)
             self.assertIn('Sansung se ha agregado!!!', data['mensaje'])
-         
 
     def test_add_product_invalid_json(self):
-        """Asegurando de que se lance un error
+        """  Asegurando de que se lance un error
          cuando el objeto JSON esta vacío."""
         with self.client:
             response = self.client.post(
@@ -208,7 +207,7 @@ class TestProductService(BaseTestCase):
         response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
         self.assertIn(b'All Products', response.data)
-        self.assertIn(b'<p>No hay productos!</p>',response.data)
+        self.assertIn(b'<p>No hay productos!</p>', response.data)
 
     def test_main_with_products(self):
         """Asegura que la ruta principal actua
@@ -220,7 +219,7 @@ class TestProductService(BaseTestCase):
             response = self.client.get('/')
             self.assertEqual(response.status_code, 200)
             self.assertIn(b'All Products', response.data)
-            self.assertNotIn(b'<p>No hay productos!</p>',response.data)
+            self.assertNotIn(b'<p>No hay productos!</p>', response.data)
             self.assertIn(b'lg', response.data)
             self.assertIn(b'ulefone', response.data)
 
