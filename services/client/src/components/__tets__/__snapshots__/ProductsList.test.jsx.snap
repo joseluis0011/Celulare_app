@@ -27,16 +27,16 @@ exports[`ProductsList renders a snapshot properly 1`] = `
     <tbody>
       <tr>
         <td>
-          xiomi
+          Sansung
         </td>
         <td>
-          5
+          12
         </td>
         <td>
-          PP
+          MK3526
         </td>
         <td>
-          p02
+          S4
         </td>
         <td>
           xiomi
@@ -44,19 +44,19 @@ exports[`ProductsList renders a snapshot properly 1`] = `
       </tr>
       <tr>
         <td>
-          lg
+          ipone
         </td>
         <td>
-          8
+          12
         </td>
         <td>
-          Z7
+          JJ3526
         </td>
         <td>
-          HJ
+          M5
         </td>
         <td>
-          lg
+          apple
         </td>
       </tr>
     </tbody>

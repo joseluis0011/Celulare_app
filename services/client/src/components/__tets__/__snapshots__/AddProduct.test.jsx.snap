@@ -13,7 +13,7 @@ exports[`AddProduct renders a snapshot properly 1`] = `
       <input
         className="input is-large"
         name="nombre"
-        placeholder="producto"
+        placeholder="celular"
         required={true}
         type="text"
       />
